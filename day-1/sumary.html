@@ -1,0 +1,59 @@
+<!--What's we learned from this code
+  * 1. v-cloak
+  * 2. display:none;
+  * 3.
+
+-->
+
+<html>
+
+<head>
+
+<style>
+
+[v-cloak]{
+    display: none;
+}
+
+</style>
+
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <!-- About mustache-->
+    <h2>{{ counter}}</h2>
+    <!-- About v-on -->
+    <button @click="sub">Sub</button>
+    <!-- About v-pre -->
+    <p v-pre>{{counter}}</p>
+
+    <!-- About v-html -->
+    <p v-html="Url"></p>
+
+    <!-- About v-bind -->
+    <img :src="imgUrl"/>
+    <img v-bind:src="imgUrl"/>
+
+  </div>
+
+  <script src="vue.js"></script>
+  <script type="text/javascript">
+    const obj = {
+      "counter": 0,
+      "Url": "<a href='http://www.google.com/'>google</a>",
+      "imgUrl": "https://cn.vuejs.org/images/logo.png"
+    }
+    const app = new Vue({
+      el: "#app",
+      data: obj,
+      methods:{
+        "sub": function(){
+          this.counter--;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

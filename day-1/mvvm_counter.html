@@ -1,0 +1,39 @@
+<html>
+
+<body>
+
+<!-- View -->
+<div id="app">
+  <h2>Counter: {{counter}}</h2>
+  <button v-on:click="add">+</button>
+  <button @click="sub">-</button>
+</div>
+
+<script src="./vue.js">
+</script>
+<script type="text/javascript">
+
+  // Model
+  const obj = {
+    counter: 0
+  }
+
+  // ViewModel
+  const app = new Vue({
+    el: "#app",
+    data: obj,
+    methods:{
+      "add": function(){
+        this.counter ++;
+      },
+      "sub": function(){
+        this.counter --;
+      }
+    }
+  });
+
+
+</script>
+</body>
+
+</html>
